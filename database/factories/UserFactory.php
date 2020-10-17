@@ -3,6 +3,7 @@
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use  App\User;
+use  App\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use  App\User;
 |
 */
 
-$factory->define(App\User::class, function (Faker $faker) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -27,5 +28,13 @@ $factory->define(App\User::class, function (Faker $faker) {
         'admin' => $verified = $faker->randomElement([User::ADMIN_USER, User::REGULAR_USER]),
 
 
+    ];
+});
+
+
+$factory->define(Category::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word,
+        'description' => $faker->paragraph(1),
     ];
 });
