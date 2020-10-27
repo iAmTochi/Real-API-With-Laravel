@@ -45,6 +45,44 @@ class User extends Authenticatable
     ];
 
     /**
+     * Mutator to set a name
+     *
+     * @param $name
+     */
+    public function setNameAttribute($name){
+        $this->attributes['name'] = strtolower($name);
+    }
+
+    /**
+     * Accessor to get a name
+     *
+     * @param $name
+     */
+    public function getNameAttribute($name){
+        return ucwords($name);
+    }
+
+    /**
+     * Mutator to set a email
+     *
+     * @param $email
+     */
+    public function setEmailAttribute($email){
+        $this->attributes['email'] = strtolower($email);
+    }
+
+    /**
+     * Accessor to get a email
+     *
+     * @param $email
+     */
+    public function getEmailAttribute($email){
+        return strtolower($email);
+    }
+
+
+
+    /**
      * The attributes that should be cast to native types.
      *
      * @var array
