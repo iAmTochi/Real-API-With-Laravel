@@ -16,7 +16,8 @@ trait ApiResponser {
 
         return response()->json([
             'error' => $message,
-            'code' => $code], $code);
+            'code' => $code
+        ], $code);
     }
 
     protected function  showAll(Collection $collection, $code = 200){
