@@ -25,7 +25,7 @@ class TransactionController extends ApiController
      * Display the specified resource.
      *
      * @param  \App\Transaction  $transaction
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\jsonResponse
      */
     public function show(Transaction $transaction)
     {
