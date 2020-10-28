@@ -29,7 +29,7 @@ class Product extends Model
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     * A Product belongs to a seller
+     * A Product belongs to a sellers
      */
     public function seller(){
         return $this->belongsTo(Seller::class);
