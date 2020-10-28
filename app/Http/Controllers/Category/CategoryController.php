@@ -37,11 +37,11 @@ class CategoryController extends ApiController
      * Display the specified resource.
      *
      * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\jsonResponse
      */
     public function show(Category $category)
     {
-        //
+        return $this->showOne($category);
     }
 
 
