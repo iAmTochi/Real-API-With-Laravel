@@ -28,7 +28,7 @@ class SellerProductController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\jsonResponse
      */
     public function store(Request $request, User $seller)
     {
@@ -44,6 +44,11 @@ class SellerProductController extends ApiController
         $data = $request->all();
         $data['status'] = Product::UNAVAILABLE_PRODUCT;
         $data['image'] = '1.jpg';
+        $data['seller_id'] = $seller->id;
+
+        $product = Product::create($data);
+
+        return  $this->showOne($product);
 
     }
 
