@@ -34,18 +34,18 @@ class SellerProductController extends ApiController
     public function store(Request $request, User $seller)
     {
         $rules = [
-            'name' => 'required',
-            'description' => 'required',
-            'quantity' => 'required|integer|min:1',
-            'image'=>'required|image',
+            'name'          => 'required',
+            'description'   => 'required',
+            'quantity'      => 'required|integer|min:1',
+            'image'         =>'required|image',
         ];
 
         $this->validate($request, $rules);
 
         $data = $request->all();
-        $data['status'] = Product::UNAVAILABLE_PRODUCT;
-        $data['image'] = '1.jpg';
-        $data['seller_id'] = $seller->id;
+        $data['status']     = Product::UNAVAILABLE_PRODUCT;
+        $data['image']      = $request->image->store('');
+        $data['seller_id']  = $seller->id;
 
         $product = Product::create($data);
 
