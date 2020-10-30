@@ -46,7 +46,7 @@ class ProductBuyerTransactionController extends ApiController
         }
 
         if(!$product->isAvailable()){
-            return $this->errorResponse('This is not available', 409);
+            return $this->errorResponse('This product is not available', 409);
         }
 
         if($product->quantity < $request->quantity){
