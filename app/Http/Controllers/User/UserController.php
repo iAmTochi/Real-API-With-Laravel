@@ -156,6 +156,8 @@ class UserController extends ApiController
 
         $user->verified = User::VERIFIED_USER;
         $user->verification_token = null;
+        $user->email_verified_at = now();
+
 
         $user->save();
 
