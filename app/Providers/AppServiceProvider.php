@@ -28,10 +28,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //Sending verification email on creating a user
         User::created(function($user){
             Mail::to($user)->send(new UserCreated($user));
         });
 
+        //Changing a product status to not available when the product quantity is '0'
         Product::updated(function($product){
             if($product->quantity == 0 && $product->isAvailable()){
                 $product->status = Product::UNAVAILABLE_PRODUCT;
