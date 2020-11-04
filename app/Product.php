@@ -43,7 +43,7 @@ class Product extends Model
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     * a production has many transactions
+     * a product has many transactions
      */
     public function transactions(){
         return $this->hasMany(Transaction::class);
