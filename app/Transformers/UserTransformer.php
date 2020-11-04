@@ -56,8 +56,8 @@ class UserTransformer extends TransformerAbstract
     public static function originalAttribute($index){
         $attributes = [
             'identifier'    => 'id',
-            'full_name'     => 'name',
-            'email'         => 'email',
+            'fullName'      => 'name',
+            'emailAddress'  => 'email',
             'isVerified'    => 'verified',
             'isAdmin'       => 'admin',
             'creationDate'  => 'created_at',
@@ -72,8 +72,8 @@ class UserTransformer extends TransformerAbstract
     public static function transformedAttribute($index){
         $attributes = [
             'id'        =>'identifier'  ,
-            'name'      =>'full_name'   ,
-            'email'     =>'email'       ,
+            'name'      =>'fullName'   ,
+            'email'     =>'emailAddress'       ,
             'verified'  =>'isVerified'  ,
             'admin'     =>'isAdmin'     ,
             'created_at'=>'creationDate',
