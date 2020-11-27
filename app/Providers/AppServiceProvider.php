@@ -29,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
         //Sending verification email on creating a user
         User::created(function($user){
             retry(5, function () use ($user){
